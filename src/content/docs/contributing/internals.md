@@ -74,3 +74,12 @@ and conflict sentinels, then delegates. Keep new handlers to that pattern.
 - `gofmt` + `goimports` clean; `go vet` and `staticcheck` with no findings.
 - Wrap errors with `%w`; never leak internals to API clients.
 - Comments explain *why*. Don't restate the code.
+
+## Architecture Decision Records
+
+Significant design choices are captured as dated, append-only ADRs in
+[`docs/adr/`](https://github.com/open226bf/hivemind/tree/main/docs/adr) (control-plane repo).
+Read them to understand *why* something is the way it is before changing it — for
+example [ADR 0001 — Encryption at rest](https://github.com/open226bf/hivemind/blob/main/docs/adr/0001-encryption-at-rest.md)
+(why secrets use `AES_KEY`/AES-256-GCM today, and the planned opt-in Vault Transit
+envelope mode).
