@@ -1,0 +1,49 @@
+---
+title: Hivemind
+description: Self-service deployment & supervision control plane for Docker Swarm — multi-cluster, agent-ready, single binary.
+template: splash
+hero:
+  tagline: Turn one or many Docker Swarm clusters into a self-service platform — including clusters behind NAT.
+  actions:
+    - text: Quick start
+      link: /hivemind-doc/start/quick-start/
+      icon: right-arrow
+    - text: View on GitHub
+      link: https://github.com/open226bf/hivemind
+      icon: external
+      variant: minimal
+---
+
+import { Card, CardGrid, LinkCard } from '@astrojs/starlight/components';
+
+Hivemind models services, secrets, configs, networks and volumes through an API
+and web console, deploys them with full history and one-click rollback, and
+supervises the running fleet live — over a direct connection **or** a
+reverse-tunnel agent for clusters with no inbound exposure.
+
+<CardGrid>
+  <Card title="Multi-cluster" icon="puzzle">
+    Every resource is scoped to a cluster. Switch the active cluster from the UI
+    and lists, creates and deploys follow it.
+  </Card>
+  <Card title="Agent for NAT" icon="rocket">
+    A reverse-tunnel agent dials out, so a firewalled cluster needs no open
+    ports and never exposes its Docker socket.
+  </Card>
+  <Card title="Deploy with memory" icon="approve-check">
+    Draft, deploy, and roll back. Every deployment is recorded; snapshots make
+    point-in-time restore one click.
+  </Card>
+  <Card title="Single image" icon="seti:docker">
+    The Go binary embeds the Angular UI and serves API + UI on one port.
+  </Card>
+</CardGrid>
+
+## Where to next?
+
+<CardGrid>
+  <LinkCard title="Quick start" href="/hivemind-doc/start/quick-start/" description="Run Hivemind and deploy your first service in minutes." />
+  <LinkCard title="Using the console" href="/hivemind-doc/using/first-login/" description="Sign in, find your way around, and run the day-to-day workflows." />
+  <LinkCard title="Architecture" href="/hivemind-doc/concepts/architecture/" description="The three repos, the hexagonal backend, and the orchestrator registry." />
+  <LinkCard title="Contributing" href="/hivemind-doc/contributing/development/" description="Set up a dev environment and send your first PR." />
+</CardGrid>

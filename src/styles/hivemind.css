@@ -1,0 +1,79 @@
+/* Hivemind docs theme — follows the web console's honey-amber palette
+   (see hivemind-gui src/app/theme.ts). Overrides Starlight's accent so links,
+   active nav, the hero button and the search highlight match the product. */
+
+/* Dark theme (Starlight defaults live on :root). */
+:root {
+  --sl-color-accent-low: #3b2406; /* amber 950 — faint backgrounds */
+  --sl-color-accent: #c8790a; /* amber 600 — primary accent */
+  --sl-color-accent-high: #f7d78c; /* amber 200 — high-contrast on dark */
+}
+
+/* Light theme. */
+:root[data-theme='light'] {
+  --sl-color-accent-low: #fbeac6; /* amber 100 */
+  --sl-color-accent: #c8790a; /* amber 600 */
+  --sl-color-accent-high: #68400c; /* amber 900 */
+}
+
+/* ─── Screenshot placeholders ──────────────────────────────────────────────
+   Reserve a spot for a UI screenshot. Usage in Markdown:
+
+     <figure class="hm-shot" data-shot="The login screen"></figure>
+
+   While empty, it renders a labelled placeholder (what to capture). To add the
+   real image later, drop an <img> inside — the placeholder disappears on its own:
+
+     <figure class="hm-shot">
+       <img src="/hivemind-doc/screenshots/login.png" alt="The login screen" />
+       <figcaption>The login screen</figcaption>
+     </figure>
+*/
+.hm-shot {
+  margin: 1.5rem 0;
+}
+
+.hm-shot:empty {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.4rem;
+  min-height: 220px;
+  padding: 1.25rem;
+  text-align: center;
+  border: 2px dashed var(--sl-color-accent);
+  border-radius: 0.5rem;
+  background: var(--sl-color-accent-low);
+  color: var(--sl-color-accent-high);
+}
+
+.hm-shot:empty::before {
+  content: '⬚ Screenshot';
+  font-weight: 700;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+.hm-shot:empty::after {
+  content: attr(data-shot);
+  font-size: 0.95rem;
+  max-width: 42ch;
+}
+
+.hm-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--sl-color-gray-5);
+  border-radius: 0.5rem;
+}
+
+.hm-shot figcaption {
+  margin-top: 0.5rem;
+  font-size: 0.85rem;
+  color: var(--sl-color-gray-3);
+  text-align: center;
+}
